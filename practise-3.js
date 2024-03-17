@@ -10,3 +10,13 @@ function bindMode(name) {
     update();
   };
 }
+
+
+fullBtn.onclick = bindMode("full");
+
+dateBtn.onclick = bindMode("date");
+
+timeBtn.onclick = bindMode("time");
+
+setInterval(update, 100);
+update();
