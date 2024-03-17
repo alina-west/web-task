@@ -20,3 +20,24 @@ timeBtn.onclick = bindMode("time");
 
 setInterval(update, 100);
 update();
+
+
+function update() {
+  output.textContent = format(mode);
+}
+
+//Pure Function
+function format(formatMode) {
+  const now = new Date();
+
+  switch (formatMode) {
+    case "time":
+      return now.toLocaleTimeString() + "." + now.getMilliseconds();
+    case "date":
+      return now.toLocaleDateString();
+    case "full":
+      return now.toLocaleDateString() + " " + now.toLocaleTimeString();
+    default:
+      return now.toLocaleTimeString();
+  }
+}
